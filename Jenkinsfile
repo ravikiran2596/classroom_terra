@@ -1,27 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage (vcs) {
+        stage ('vcs') {
             steps {
                 git url: 'https://github.com/ravikiran2596/classroom_terra.git',
                     branch: 'master'
             }
-            stage (init) {
+            stage ('ok') {
                 steps {
                     sh 'terraform init'
                 }
             }
-            stage (fmt) {
+            stage ('done') {
                 steps {
                     sh 'terraform fmt'
                 }
             }
-            stage (validate) {
+            stage ('check') {
                 steps {
                     sh 'terraform validate'
                 }
             }
-            stage (apply) {
+            stage ('do') {
                 steps {
                     sh 'terraform apply -var-file variables.tfvars'
                 }
