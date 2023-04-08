@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage (vcs) {
             steps {
-                git url: 'https://github.com/ravikiran2596/classroom_terra.git'
+                git url: 'https://github.com/ravikiran2596/classroom_terra.git',
                     branch: 'master'
             }
             stage (init) {
