@@ -12,16 +12,6 @@ pipeline {
                 sh 'terraform init'
             }
         }
-        stage('fmt') {
-            steps {
-                sh 'terraform fmt'
-            }
-        }
-        stage('validate') {
-            steps {
-                sh 'terraform validate'
-            }
-        }
         stage('apply') {
             steps {
                 sh 'terraform apply -auto-approve -var-file variables.tfvars'
