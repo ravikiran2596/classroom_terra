@@ -90,7 +90,7 @@ resource "null_resource" "runner" {
   connection {
     host        = aws_instance.ravi123.public_ip
     user        = "ubuntu"
-    private_key = file("~/.ssh/id_rsa")
+    private_key = file("~/id_rsa")
     type        = "ssh"
 
   }
