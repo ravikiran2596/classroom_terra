@@ -7,16 +7,24 @@ pipeline {
                     branch: 'master'
             }
             stage (init) {
-                sh 'terraform init'
+                steps {
+                    sh 'terraform init'
+                }
             }
             stage (fmt) {
-                sh 'terraform fmt'
+                steps {
+                    sh 'terraform fmt'
+                }
             }
             stage (validate) {
-                sh 'terraform validate'
+                steps {
+                    sh 'terraform validate'
+                }
             }
             stage (apply) {
-                sh 'terraform apply -var-file variables.tfvars'
+                steps {
+                    sh 'terraform apply -var-file variables.tfvars'
+                }
             }
         }
     }
